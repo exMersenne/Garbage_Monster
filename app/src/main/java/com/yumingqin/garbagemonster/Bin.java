@@ -1,28 +1,74 @@
 package com.yumingqin.garbagemonster;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+
 /**
  * Created by yumin on 6/24/2016.
  */
 public class Bin {
-    String BinID;
 
-    public Bin() {
-        BinID = "Testing";
-    }
 
-    public boolean play(Garbage garbage) {
-        if (garbage.id.equals(BinID)) {
-            return true;
+        private Bitmap bitmap; //actual bitmap
+        private int x; //x coord
+        private int y; //y coord
+//        private boolean touched; //if the player has been touched/picked up
+
+        public Bin(Bitmap bitmap, int x, int y) {
+            this.bitmap = bitmap;
+            this.x = x;
+            this.y = y;
         }
-        return false;
+
+        public Bitmap getBitmap() {
+            return bitmap;
+        }
+
+        public void setBitmap(Bitmap bitmap) {
+            this.bitmap = bitmap;
+        }
+
+        public int getX() {
+            return x;
+        }
+
+        public void setX(int x) {
+            this.x = x;
+        }
+
+        public int getY() {
+            return y;
+        }
+
+        public void setY(int y) {
+            this.y = y;
+        }
+
+//        public boolean isTouched() {
+//            return touched;
+//        }
+//
+//        public void setTouched(boolean touched) {
+//            this.touched = touched;
+//        }
+
+        public void draw(Canvas canvas) {
+            canvas.drawBitmap(bitmap, x - (bitmap.getWidth() / 2),
+                    y - (bitmap.getHeight() / 2), null);
+        }
+
+//        public void handleActionDown(int eventX, int eventY) {
+//            if (eventX >= (x - bitmap.getWidth() / 2) && (eventX <= (x + bitmap.getWidth()/2))) {
+//                if (eventY >= (y - bitmap.getHeight() / 2) && (y <= (y + bitmap.getHeight() / 2))) {
+//                    //player selected
+//                    setTouched(true);
+//                } else {
+//                    setTouched(false);
+//                }
+//            } else {
+//                setTouched(false);
+//            }
+//        }
     }
 
-    public int score(boolean scored, int currScore) {
-        if (scored) {
-            currScore++;
-        } else {
-            currScore--;
-        }
-        return currScore;
-    }
-}
+
