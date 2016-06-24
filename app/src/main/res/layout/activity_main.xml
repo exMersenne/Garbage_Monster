@@ -41,15 +41,6 @@
         android:layout_above="@+id/weeklyButton"
         android:layout_centerHorizontal="true" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/garbagePenguin"
-        android:layout_below="@+id/weeklyButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,4 +48,12 @@
         android:id="@+id/mapButton"
         android:layout_above="@+id/infoButton"
         android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/garbage0penguin"
+        android:layout_below="@+id/weeklyButton" />
 </RelativeLayout>
