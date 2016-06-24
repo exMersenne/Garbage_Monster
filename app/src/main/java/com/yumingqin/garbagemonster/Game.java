@@ -2,6 +2,7 @@ package com.yumingqin.garbagemonster;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -19,6 +20,21 @@ public class Game extends AppCompatActivity {
         //making it full screen
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_game);
+        //set our MainGamePanel as the View
+//        setContentView(R.layout.activity_game);
+        setContentView(new MainGamePanel(this));
+        Log.d(TAG, "View added");
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG, "Destroying...");
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(TAG, "Stopping...");
+        super.onStop();
     }
 }

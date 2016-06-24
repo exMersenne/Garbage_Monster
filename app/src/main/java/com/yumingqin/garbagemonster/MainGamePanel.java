@@ -2,7 +2,10 @@ package com.yumingqin.garbagemonster;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
@@ -13,6 +16,7 @@ public class MainGamePanel extends SurfaceView implements
 
         SurfaceHolder.Callback {
     private MainThread thread;
+    Paint p;
     private static final String TAG = MainGamePanel.class.getSimpleName();
 
     public MainGamePanel(Context context) {
@@ -40,7 +44,8 @@ public class MainGamePanel extends SurfaceView implements
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-
+        thread.setRunning(true);
+        thread.start();
     }
 
 
@@ -76,8 +81,14 @@ public class MainGamePanel extends SurfaceView implements
 
 
     @Override
-
     protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        p = new Paint();
+        BitmapFactory.Options opts = new BitmapFactory.Options();
+        opts.inSampleSize = 4;
+        Bitmap b = BitmapFactory.decodeResource(getResources(), R.drawable.garbage0penguin, opts);
+        canvas.drawBitmap(b, 0, 0, null);
+// canvas.drawBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.garbage0penguin), 100, 100, null);
 
     }
 
