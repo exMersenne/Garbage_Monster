@@ -49,4 +49,12 @@
         android:layout_below="@+id/weeklyButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waste Management Centers Map"
+        android:id="@+id/mapButton"
+        android:layout_above="@+id/infoButton"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
