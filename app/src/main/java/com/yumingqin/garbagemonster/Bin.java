@@ -17,5 +17,12 @@ public class Bin {
         return false;
     }
 
-    public int score()
+    public int score(boolean scored, int currScore) {
+        if (scored) {
+            currScore++;
+        } else {
+            currScore--;
+        }
+        return currScore;
+    }
 }

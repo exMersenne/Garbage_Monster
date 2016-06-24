@@ -56,4 +56,5 @@
         android:layout_centerHorizontal="true"
         android:src="@drawable/garbage0penguin"
         android:layout_below="@+id/weeklyButton" />
+
 </RelativeLayout>
